@@ -27,12 +27,12 @@ public class PorscheTest extends TestBase {
         String cost718CaymanSInner = driver.findElement(By.xpath("//section[@id='s_quicksum']//div[.='Base price:']/../div[2]")).getText();
         Assert.assertEquals(cost718CaymanSInner,cost718CaymanS);
         String acPriceForEq = driver.findElement(By.xpath("//section[@id='s_quicksum']//div[.='Price for Equipment:']/../div[2]")).getText().
-                        substring(1);
+                                substring(1);
         Assert.assertEquals(acPriceForEq,"0");
         String totalPrice = driver.findElement(By.xpath("//section[@id='s_quicksum']//div[.='Total Price:*']/..//div[2]")).getText().
-                        substring(1).replace(",","");
+                                 substring(1).replace(",","");
         String feesDelHand = driver.findElement(By.xpath("//section[@id='s_quicksum']//div[contains(text(),'Delivery')]/..//div[2]")).getText().
-                        substring(1).replace(",","");
+                                substring(1).replace(",","");
         double total = Double.parseDouble(totalPrice);
         double base = Double.parseDouble(cost718CaymanSInner.substring(1).replace(",", ""));
         double fees = Double.parseDouble(feesDelHand);
@@ -41,13 +41,13 @@ public class PorscheTest extends TestBase {
         driver.findElement(By.id("s_exterieur_x_FJ5")).click();
         //locate and store again, cause elements value changed after click
         acPriceForEq = driver.findElement(By.xpath("//section[@id='s_quicksum']//div[.='Price for Equipment:']/../div[2]")).getText().
-                        substring(1).replace(",","");
+                                substring(1).replace(",","");
         Assert.assertEquals(acPriceForEq, driver.findElement(By.id("s_exterieur_x_FJ5")).getAttribute("data-price").substring(1).replace(",",""));
         //locate and store again, cause elements value changed after click
         totalPrice = driver.findElement(By.xpath("//section[@id='s_quicksum']//div[.='Total Price:*']/..//div[2]")).getText().
-                        substring(1).replace(",","");
+                                substring(1).replace(",","");
         feesDelHand = driver.findElement(By.xpath("//section[@id='s_quicksum']//div[contains(text(),'Delivery')]/..//div[2]")).getText().
-                        substring(1).replace(",","");
+                                substring(1).replace(",","");
         total = Double.parseDouble(totalPrice);
         fees = Double.parseDouble(feesDelHand);
         priceForEq = Double.parseDouble(acPriceForEq.replace(",",""));
@@ -61,7 +61,7 @@ public class PorscheTest extends TestBase {
         double costCarreraSportWheel = Double.parseDouble(priceCarreraSportWheel.substring(1).replace(",",""));
         //locate and store again, cause elements value changed after click
         acPriceForEq = driver.findElement(By.xpath("//section[@id='s_quicksum']//div[.='Price for Equipment:']/../div[2]")).getText().
-                        substring(1).replace(",","");
+                            substring(1).replace(",","");
         priceForEq = Double.parseDouble(acPriceForEq);
         String costOfBlueColor = driver.findElement(By.id("s_exterieur_x_FJ5")).getAttribute("data-price").substring(1).replace(",","");
         double blueColorPrice = Double.parseDouble(costOfBlueColor);
